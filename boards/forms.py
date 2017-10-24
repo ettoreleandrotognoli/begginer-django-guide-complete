@@ -1,5 +1,6 @@
 from django import forms
 from .models import Topic
+from .models import Post
 
 class NewTopicForm(forms.ModelForm):
     message = forms.CharField(
@@ -19,3 +20,8 @@ class NewTopicForm(forms.ModelForm):
 
 #  Now observe that we are defining an extra field named message. 
 #  This refers to the message in the Post we want to save.
+
+class PostForm(forms.ModelForm):
+    class Meta:
+        model = Post
+        fields = ['message', ]
