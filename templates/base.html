@@ -6,8 +6,10 @@
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/app.css' %}">
-
-     {% block stylesheet %}{% endblock %}  <!-- HERE -->
+		
+	
+     {% block stylesheet %}
+     {% endblock %}  <!-- HERE -->
   </head>
   <body>
 	{% block body %}
@@ -53,8 +55,8 @@
 	{% endblock body %}
 
 	<script src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
-	<script src="{% static 'js/popper.min.js' %}"></script>
-
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    {% block javascript %}{% endblock %}  <!-- Add this empty block here! -->
   </body>
 </html>
