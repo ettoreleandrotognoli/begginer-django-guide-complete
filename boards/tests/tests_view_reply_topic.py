@@ -11,6 +11,7 @@ class ReplyTopicTestCase(TestCase):
     '''
     Base test case to be used in all `reply_topic` view tests
     '''
+
     def setUp(self):
         self.board = Board.objects.create(name='Django', description='Django board.')
         self.username = 'john'
@@ -70,7 +71,6 @@ class SuccessfulReplyTopicTests(ReplyTopicTestCase):
         topic_posts_url = '{url}?page=1#2'.format(url=url)
         self.assertRedirects(self.response, topic_posts_url)
 
-        
     def test_reply_created(self):
         '''
         The total post count should be 2
@@ -97,4 +97,4 @@ class InvalidReplyTopicTests(ReplyTopicTestCase):
 
     def test_form_errors(self):
         form = self.response.context.get('form')
-self.assertTrue(form.errors)
+        self.assertTrue(form.errors)
